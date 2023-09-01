@@ -1,0 +1,27 @@
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        padding: 2rem;
+        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+    .titulo{
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width:768px) {
+    
+}
+
+@media screen and (min-width: 992px) {
+    
+}
+
+@media screen and (min-width: 1200px) {
+    
+}
+
+@media screen and (min-width: 1400px) {
+    
+}

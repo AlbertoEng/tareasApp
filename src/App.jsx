@@ -49,17 +49,19 @@ function App() {
 
     return (
         <>
-            <div className="container d-flex flex-wrap bg-dark mt-3 rounded p-3 text-white">
+            <div className="container d-flex flex-wrap contenedor  bg-dark bg-md-success mt-3 p-3 rounded text-white">
                 <div className="col-12 col-md-6">
-                    <h3>Pendientes:</h3>
+                    <h3 className='titulo'>Pendientes:</h3>
                     <ul className="list-group col-11">
                         {
-                            taskList.map(( task )=>(
-                                <li key={task.id} className="list-group-item d-flex justify-content-end">
-                                    <p htmlFor="" className={ `${colorMap[task.prioridad]} fs-4 m-0`} style={{ textDecoration: task.completado ? 'line-through': 'none' }}>{task.description}</p>
-                                    <input className='mx-3' type="checkbox" id="" onChange={ (ev) => completeHandler(ev, task.id) } />
-                                </li>
-                            ))
+                            taskList.length === 0 
+                                ? <p className='fs-4 text-center text-primary'>Aun No hay Tareas. Agrega Una</p>
+                                : taskList.map(( task )=>(
+                                    <li key={task.id} className="list-group-item d-flex justify-content-end">
+                                        <p htmlFor="" className={ `${colorMap[task.prioridad]} fs-4 m-0`} style={{ textDecoration: task.completado ? 'line-through': 'none' }}>{task.description}</p>
+                                        <input className='mx-3' type="checkbox" id="" onChange={ (ev) => completeHandler(ev, task.id) } />
+                                    </li>
+                                ))
                         }
                     </ul>
                 </div>
